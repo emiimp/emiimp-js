@@ -6,7 +6,7 @@ for(let i = 0; i <=3; i++){
 }
 }
 
-let numero = parseInt(prompt(`${nombre}, por favor ingresá un número para multiplicar tres veces x2`));
+let numero = parseInt(prompt(`${nombre}, por favor ingresá un número para multiplicar tres veces`));
 
 for (let index = 2; index <=4; index++){
     let result = numero * index;
