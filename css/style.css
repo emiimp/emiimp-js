@@ -6,7 +6,6 @@ html {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
 
 body {
-  background-color: #fff;
   color: #666;
   font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
@@ -285,3 +284,6 @@ aside {
     width: 100%; }
   .product-details {
     padding: 0 1rem; } }
+
+.green {
+  color: #4FCE5D; }

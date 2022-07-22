@@ -3,7 +3,7 @@
 let nombre = prompt("Ingrese su nombre");
 let saludo = document.getElementById("saludo");
 console.log(saludo.innerHTML);
-saludo.innerHTML = `<h3>¡Bienvenid@, ${nombre}!</h3>`
+saludo.innerHTML = `<h3>¡Bienvenid@, ${nombre}!</h3>`;
 
 //OPERACION
 
@@ -44,5 +44,24 @@ for(const item of ofertas){
 
 alert(`Libros en oferta (precio menor a 10USD): ${titulo}. ¡No lo dejes pasar, ${nombre}!`)
 
+
+//EVENTS
+
+let button = document.getElementById("applyDiscountButton");
+button.addEventListener("click",respuestaClick);
+function respuestaClick(){
+    console.log("respuestaEvento");
+}
+
+let promoCode = document.getElementById("promoCode");
+let promoMessage = document.getElementById("promoMessage");
+
+promoCode.addEventListener("input", () => {
+    console.log(promoCode.value);
+    if(promoCode.value.includes("15%off")){
+        promoMessage.innerHTML = "<h3>Tiene un 15% de descuento sin tope de compra.</h3>";
+        promoMessage.classList = "green";
+    }
+});
 
 

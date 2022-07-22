@@ -42,7 +42,7 @@
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <button class="btn btn-outline-success" type="submit" id="searchButton">Buscar</button>
         </form>
       </div>
     </div>
@@ -52,14 +52,15 @@
 
   <main>
 
+    <div>
     <h3 id="saludo">¡Bienvenid@!</h3>
+    <p id="promoMessage">¿Tiene un código de descuento?</p>
+    <input type="text" id="promoCode" class="promo-code-field" autocapitalize="off">
+    <button class="promo-code-cta" id="applyDiscountButton">Aplicar</button>
+    </div>
 
     <div class="basket">
-      <div class="basket-module">
-        <label for="promo-code">¿Tiene un código de descuento?</label>
-        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
-        <button class="promo-code-cta">Aplicar</button>
-      </div>
+
       <div class="basket-labels">
         <ul>
           <li class="item item-heading">Item</li>
@@ -86,7 +87,7 @@
         </div>
         <div class="subtotal"></div>
         <div class="remove">
-          <button>Remove</button>
+          <button id="removeButton">Remove</button>
         </div>
       </div>
 
@@ -107,7 +108,7 @@
         </div>
         <div class="subtotal"></div>
         <div class="remove">
-          <button>Remove</button>
+          <button id="removeButton">Remove</button>
         </div>
       </div>
 
@@ -128,7 +129,7 @@
         </div>
         <div class="subtotal"></div>
         <div class="remove">
-          <button>Remove</button>
+          <button id="removeButton">Remove</button>
         </div>
       </div>
 
@@ -149,7 +150,7 @@
         </div>
         <div class="subtotal"></div>
         <div class="remove">
-          <button>Remove</button>
+          <button id="removeButton">Remove</button>
         </div>
       </div>
 
@@ -170,7 +171,7 @@
         </div>
         <div class="subtotal"></div>
         <div class="remove">
-          <button>Remove</button>
+          <button id="removeButton">Remove</button>
         </div>
       </div>
 
@@ -191,7 +192,7 @@
         </div>
         <div class="subtotal"></div>
         <div class="remove">
-          <button>Remove</button>
+          <button id="removeButton">Remove</button>
         </div>
       </div>
 
@@ -221,7 +222,7 @@
           <div class="total-value final-value" id="basket-total"></div>
         </div>
         <div class="summary-checkout">
-          <button class="checkout-cta">Comprar</button>
+          <button class="checkout-cta" id="buyButton">Comprar</button>
         </div>
       </div>
     </aside>
