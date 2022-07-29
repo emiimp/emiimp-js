@@ -1,9 +1,20 @@
-//DOM - SALUDO
+//SALUDO : DOM - STORAGE
 
-let nombre = prompt("Ingrese su nombre");
-let saludo = document.getElementById("saludo");
-console.log(saludo.innerHTML);
-saludo.innerHTML = `<h3>¡Bienvenid@, ${nombre}!</h3>`;
+let usuario;
+let usuarioStorage = localStorage.getItem("usuario");
+
+if(usuarioStorage){
+    let usuario = usuarioStorage;
+    let saludo = document.getElementById("saludo");
+    console.log(saludo.innerHTML);
+    saludo.innerHTML = `<h3>¡Bienvenid@, ${usuario}!</h3>`;
+}else{
+    usuario = prompt("Ingrese su nombre");
+    localStorage.setItem("usuario",usuario);
+    let saludo = document.getElementById("saludo");
+    console.log(saludo.innerHTML);
+    saludo.innerHTML = `<h3>¡Bienvenid@, ${usuario}!</h3>`;
+}
 
 //OPERACION
 
@@ -33,6 +44,17 @@ for (let index = 0; index < libros.length; index ++) {
     console.log (libros[index]);
 }
 
+// Almacenamiento de datos en el Storage
+
+const save = (clave, valor) => {localStorage.setItem(clave,valor);}
+
+for(const libro of libros){
+    save(libro.id, JSON.stringify(libro))
+}
+
+localStorage.setItem("libros", JSON.stringify(libros));
+
+
 //HIGH ORDER FUNCTIONS
 
 let titulo = "";
@@ -42,7 +64,7 @@ for(const item of ofertas){
     titulo = titulo + item.titulo;
 }
 
-alert(`Libros en oferta (precio menor a 10USD): ${titulo}. ¡No lo dejes pasar, ${nombre}!`)
+alert(`Libros en oferta (precio menor a 10USD): ${titulo}. ¡No lo dejes pasar, ${usuarioStorage}!`)
 
 
 //EVENTS
