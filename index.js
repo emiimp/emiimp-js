@@ -3,18 +3,17 @@
 let usuario;
 let usuarioStorage = localStorage.getItem("usuario");
 
-if(usuarioStorage){
-    let usuario = usuarioStorage;
-    let saludo = document.getElementById("saludo");
-    console.log(saludo.innerHTML);
-    saludo.innerHTML = `<h3>¡Bienvenid@, ${usuario}!</h3>`;
-}else{
-    usuario = prompt("Ingrese su nombre");
-    localStorage.setItem("usuario",usuario);
-    let saludo = document.getElementById("saludo");
-    console.log(saludo.innerHTML);
-    saludo.innerHTML = `<h3>¡Bienvenid@, ${usuario}!</h3>`;
-}
+//OPERADOR TERNARIO
+
+usuarioStorage ? (usuario = usuarioStorage) : (usuario = prompt("Ingrese su nombre"), localStorage.setItem("usuario",usuario));
+    
+let saludo = document.getElementById("saludo");
+console.log(saludo.innerHTML);
+saludo.innerHTML = `<h3>¡Bienvenid@, ${usuario}!</h3>`;
+
+//OPERADOR &&
+
+usuario === "" && console.log ("El usuario no se ha identificado");
 
 //OPERACION
 
@@ -26,7 +25,7 @@ let precioDolarOficial = 135.75;
 let cotizacionPeso = multiplicacion (pesoArgentino, precioDolarOficial)
 console.log(cotizacionPeso)
 
-alert(`Los precios están en USD. Para comprar en ARS, cotizamos según el dólar oficial del Banco Nación (Argentina): 1USD = ${cotizacionPeso}ARS`)
+alert(`Los precios están en USD. Para comprar en ARS, cotizamos según el dólar oficial del Banco Nación (Argentina): 1USD = ${cotizacionPeso}ARS`) 
 
 //ARRAY + OBJECT
 
@@ -43,6 +42,15 @@ const libros = [
 for (let index = 0; index < libros.length; index ++) {
     console.log (libros[index]);
 }
+
+//desestructuración
+
+const [a,b,c,d,e,f] = libros;
+
+console.log(`Libro con descuento ${JSON.stringify(d)}`);
+console.log(`Libro con descuento ${JSON.stringify(e)}`);
+console.log(`Libro con descuento ${JSON.stringify(f)}`);
+
 
 // Almacenamiento de datos en el Storage
 
@@ -64,7 +72,7 @@ for(const item of ofertas){
     titulo = titulo + item.titulo;
 }
 
-alert(`Libros en oferta (precio menor a 10USD): ${titulo}. ¡No lo dejes pasar, ${usuarioStorage}!`)
+alert(`Libros en oferta (precio menor a 10USD): ${titulo}. ¡No lo dejes pasar, ${usuarioStorage}!`);
 
 
 //EVENTS
@@ -85,5 +93,6 @@ promoCode.addEventListener("input", () => {
         promoMessage.classList = "green";
     }
 });
+ 
 
 
